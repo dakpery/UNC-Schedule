@@ -1,0 +1,147 @@
+Chapter 4
+
+Process Model 
+	• A process model provides a specific roadmap for SWE work. 
+	• Software engineers and their managers adapt a process model to their needs and then follow it. in addition, the people who have requested the software have a role to play in the process of defining, bbuilding, and testing it. 
+	• Process models are important because they provides stability and control. 
+	• Agile Development - quick to change. Everything at this point is quick and we should eb able to adjust. 
+	• Steps will be different each time. 
+
+The waterfall model
+	• The waterfall model, sometimes called the classic life cycle --> linear 
+
+The V model 
+	• Prettty much the waterfall method, accept it adds QA throughout the process. 
+
+Problems with the waterfall method 
+	• Real projects to not follow this sequential flow. 
+	• Customers have a hard time telling you the requirements in the first meeting, therefore we will have to revisit their original plan. 
+	
+The incremental Model 
+	• The incremental model combines the elements linear and parallel process flows. 
+	•Init software requirements are reasonably well defined, but the overall scope of the dev cycle effort precludes a purely linear model. 
+	• An incremental model works really well when you have a good idea of the core product. 
+	
+Evolutionary Models: Prototyping
+	• Quick plan -> Model quick design -> Constuction of prototype -> Deployment delivery & feedback -> communication
+	• Software flaw: You may pick a tool for a development that may not be the best tool for the real product. 
+	• The key to prototyping is to define the rules of the game at the beginning. That is, all stakeholders should agree that the prototype is built to serve aas a mechanism for defining requirements. 
+	
+	The spiral: Look up 
+		• Used by very large teams 
+		
+	Concurrent
+		• Concurrent modeling defines a series of events that will trigger transitions from state to state for each of the sofware engineering activities, actions, or tasks.
+		• Concurrent is applicatable to all types of software development. 
+		• The whole point is high quality software . THis is the best model to give that end result. 
+	
+Other process models
+	• Component based dev - Creating components that can be reused. 
+	• Formal Methods - emphasizes the mathematical specification of requirements. 
+	• AOSD - provides a process and methodological approach for defining, specifying, designing, and constructing aspects. 
+	• Unified Process - a "use-case drive, architecture centric, iterative and incremental" software process closely aligned with the Unified Modeling Language.
+	
+
+Chapter 5: Agile Software Development
+• Working software over comprehensive documentation 
+• Customer collaboration over contract negotiation
+• Responding to change over following a plan. 
+• Individuals and interactions over processes 
+
+What is Agility?
+	• Effective (rapid and adaptive) response to change 
+	• Effectivef communication onto the team 
+	• Drawing the customer onto the team 
+	Organizing a team so that it is in control of the work performed. 
+	
+• If you make a change late in the development process, it is very expensive. 
+
+An Agile process 
+	• Is driven by customer descriptions of what is required. 
+	• Recognizes that plans are short-lived
+	• Develops software iteratively with a heavy emphasis on costurciton activities
+	• Delivers multiple 'software increments'
+	• Adapts as changes occur. 
+
+KNOw the 12 MAIN PRINCIPLES OF AGILE: EXAMPLE:
+• Satisfy the customer by gving them early pieces. 
+	• Build a small piece and get feedback. 
+	
+• Welcoming changes to the requirements. 
+• Working in small pieces
+
+Human Factors 
+	• The process molds to the needs of the people and team, not the other 	way around. 
+	• key traits must exist among the people on an agile team and the team itself:
+		• Competence
+		• Common Focus
+		• Collaboration
+		• Decision-making ability
+		• Fuzzy problem-solving ability
+		• Mutual trust and respect 
+		• Self-Organization 
+Extreme Programming(XP)
+	• The most widely used agile process
+	• XP Planning 
+		• Begins with "user stories"
+		• Agile team assesses each story and asigns a cost
+		• Stories are groupsed for deliverable increment
+		• A commitment is made on delivery date
+		• After the first increment "project velocity" is used to help define subsequent delivry dates for other increments
+		
+XP Design
+	• Enocurage the use of CRC Cards 
+	• For difficult desing problems, suggests the creation of "spike solutions" - a design prototype
+	• Encourages "refactoring" - an iterative refinement of the internal program design
+		• Code is changing all the time. Stop, refactor the entire software. 
+
+XP Coding 
+	• Recommends the construction of a unit test for a story before coding commences 
+	• Encourages "Pair Programming"
+
+
+XP Testing
+	• All unit tests are executed daily 
+	• "Accetance tests" are defined by the customer and executed to assess customer visible functionality. 
+	
+IXP - Industrial Extreme Programming 
+	• Including the manager and customer more 
+	• Usually a more established company with more guidelines. 
+	
+	• Processes of IXP 
+		• Readiness assessment - Assess which team members are on the same page. Understand skill level  
+		• Project Community - Make sure the right people are on the team.  
+		• Project Charting - Assess the proeject and determine whether appropriate business justification. 
+		• Test Driven - Some type of process or mechanism of, "did we achieve the goal"
+		• Retrospectives - Conducts a specialized technical review, after a software increment is delivered. 
+		• continuous learning -  The team is encouraged to learn new methods and techniques that can lead to a higher- quality product
+
+Scrum
+	• Scrum - distinguishing features 
+		• Development work is partitioned into "Packets"
+		• Testing and documentation are on-going as the product is constructed. 
+		• Work occurs in "Sprints" and is derived from a "backlog" of existing requirements 
+		• Meetings are very short and sometimes conducted without chairs. 
+		• "Demos" are delivered to the customer with the time-box allocated. 
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
