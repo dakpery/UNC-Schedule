@@ -83,7 +83,12 @@ namespace UNC_Schedule
 
         public String getBitArray()
         {
-            return this.BitArray;
+            return BitArray;
+        }
+
+        public String getCRN()
+        {
+            return CRN;
         }
 
 

@@ -88,7 +88,7 @@ namespace UNC_Schedule
 
 
 
-
+            
             }
 
         }
@@ -96,16 +96,45 @@ namespace UNC_Schedule
         public void Button1_Click(object sender, EventArgs e)
         {
             ArrayList test = new ArrayList();
-            mappy.TryGetValue("EDN300", out test);
-            for (int i = 0; i < test.Count; i++)
+            mappy.TryGetValue("BIO246", out test);
+            BitArray course1 = null;
+            BitArray course2 = null;
+
+
+            for (int i = 0; i < 1; i++)
             {
                 Course tempCourse = (Course)test[i];
-                String testies = tempCourse.getBitArray();
-                
-                BigInteger sex = BigInteger.Parse(testies);
-                
-                MessageBox.Show(Convert.ToString(sex));
+                String courseBits = tempCourse.getBitArray();
+                String CRN1 = tempCourse.getCRN();
+                course1 = new BitArray(courseBits.Select(c => c == '1').ToArray());
+
             }
+
+            mappy.TryGetValue("GGY140", out test);
+
+            for (int i = 0; i < 1; i++)
+            {
+                Course tempCourse = (Course)test[i];
+                String courseBits = tempCourse.getBitArray();
+                String CRN2 = tempCourse.getCRN();
+                course2 = new BitArray(courseBits.Select(c => c == '1').ToArray());
+
+            }
+
+            BitArray testBits = course1.And(course2);
+            if (testBits[0])
+            {
+                MessageBox.Show("Conflict");
+            } else
+
+            {
+                MessageBox.Show("None");
+            }
+            
+
+            
+
+
         }
 
     }
