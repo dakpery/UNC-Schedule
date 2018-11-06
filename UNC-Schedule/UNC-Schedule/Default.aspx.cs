@@ -81,15 +81,18 @@ namespace UNC_Schedule
 
                 }
 
+                String a = testFunction("CSC133", "CSC131", "CSC231");
+                MessageBox.Show("The schedules are = " + a);
 
 
-
-
-
-
-
-            
             }
+
+
+
+
+
+
+
 
         }
 
@@ -125,17 +128,105 @@ namespace UNC_Schedule
             if (testBits[0])
             {
                 MessageBox.Show("Conflict");
-            } else
+            }
+            else
 
             {
                 MessageBox.Show("None");
             }
-            
 
-            
 
+
+            String a = testFunction("CSC450", "CSC455", "CSC315");
 
         }
+
+        private string testFunction(string courseStr1, string courseStr2, string courseStr3)
+        {
+
+            BitArray course1 = null; 
+            BitArray course2 = null;
+            BitArray course3 = null;
+            String concatStr = "";
+
+            
+            ArrayList test = new ArrayList();
+            ArrayList test2 = new ArrayList();
+            ArrayList test3 = new ArrayList();
+            mappy.TryGetValue(courseStr1, out test);  //CSC450
+            mappy.TryGetValue(courseStr2, out test2); //CSC455
+            mappy.TryGetValue(courseStr3, out test3); //CSC315
+
+            for (int i = 0; i < test.Count; i++)
+            {
+                Course tempCourse = (Course)test[i];
+                String courseBits1 = tempCourse.getBitArray();
+                course1 = new BitArray(courseBits1.Select(c => c == '1').ToArray());
+
+                int j = 0;
+                int k = 0;
+
+
+                for (j = 0; j < test2.Count; j++)
+                {
+                    Course tempCourse2 = (Course)test2[j];
+                    String courseBits2 = tempCourse2.getBitArray();
+                    course2 = new BitArray(courseBits2.Select(c => c == '1').ToArray());
+
+                    BitArray compareBits = course1.And(course2);
+                    bool testBool = iterateBitArray(compareBits);
+
+                    if (testBool)
+                    {
+                        //MessageBox.Show("Conflict between: " + tempCourse.getCRN() + "," + tempCourse2.getCRN());
+                        continue;
+                    }
+                    else 
+                    {
+                        for (k = 0; k < test3.Count; k++)
+                        {
+                            Course tempCourse3 = (Course)test3[k];
+                            String courseBits3 = tempCourse3.getBitArray();
+                            course3 = new BitArray(courseBits3.Select(c => c == '1').ToArray());
+
+                            BitArray compareBits2 = course2.And(course3);
+                            BitArray compareBits3 = course3.And(course1);
+                            
+                            testBool = iterateBitArray(compareBits2);
+                            bool testBool2 = iterateBitArray(compareBits3);
+
+
+                            if (testBool || testBool2)
+                            {
+                                //MessageBox.Show("Conflict between: " + tempCourse.getCRN() + "," + tempCourse2.getCRN() + "," + tempCourse3.getCRN());
+                                continue;
+                            }
+                            else
+                            {
+                                concatStr += tempCourse.getCRN() + "," + tempCourse2.getCRN() + "," + tempCourse3.getCRN() + ";";
+                            }
+                        }
+                    }
+                }
+            }
+            return concatStr;
+
+        }
+
+        public bool iterateBitArray(BitArray bits)
+        {
+            for(int i = 0; i < bits.Count; i++)
+            {
+                if (bits[i]){
+                    return true;
+                }
+            }
+            return false;
+        }
+
+
+
+
 
     }
 }
