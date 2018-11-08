@@ -20,7 +20,14 @@
         public static Dictionary<string, ArrayList> mappy = new Dictionary<string, ArrayList>();
 
         /// <summary>
-        /// Defines the sw
+        /// Defines the debug
+        /// Determines if schedules will be written to a text file
+        /// </summary>
+        public static Boolean debug = true;
+
+        /// <summary>
+        /// sw writes to a textfile on the current machines desktop
+        /// Directory WILL need to change
         /// </summary>
         public static StreamWriter sw = new StreamWriter(@"C:\Users\ctr20\Desktop\schedules.txt");
 
@@ -142,37 +149,12 @@
             }
 
 
-            //ArrayList courseList = new ArrayList();
-            //mappy.TryGetValue(courseStr, out courseList);
-
             BitArray course1BitArray = null;
             BitArray course2BitArray = null;
             BitArray course3BitArray = null;
             BitArray course4BitArray = null;
             BitArray course5BitArray = null;
             BitArray course6BitArray = null;
-
-
-
-
-
-
-
-            //ArrayList course4List = (ArrayList)sectionsDesiredCourses[3];
-            //ArrayList course5List = (ArrayList)sectionsDesiredCourses[4];
-            //ArrayList course6List = (ArrayList)sectionsDesiredCourses[5];
-
-            //mappy.TryGetValue(course1Str, out course1List); 
-            //mappy.TryGetValue(course2Str, out course2List); 
-            //mappy.TryGetValue(course3Str, out course3List);
-            //mappy.TryGetValue(course3Str, out course3List);
-            //mappy.TryGetValue(course4Str, out course4List);
-            //mappy.TryGetValue(course5Str, out course5List);
-            //mappy.TryGetValue(course6Str, out course6List);
-
-
-
-
 
             int counter = 0;
             string concatStr = "";
@@ -220,7 +202,7 @@
                                 continue;
                             }
 
-                            if (desiredCourses.Count == 2) //for debugging purposes
+                            if (desiredCourses.Count == 2 && debug) //for debugging purposes
                             {
                                 counter++;
                                 concatStr = tempCourse.getCRN() + "," + tempCourse2.getCRN() + ",";
@@ -265,7 +247,7 @@
                                         continue;
                                     }
 
-                                    if (desiredCourses.Count == 3) //for debugging purposes
+                                    if (desiredCourses.Count == 3 && debug) //for debugging purposes
                                     {
                                         counter++;
                                         concatStr = tempCourse.getCRN() + "," + tempCourse2.getCRN() +
@@ -324,7 +306,7 @@
 
 
 
-                                            if (desiredCourses.Count == 4) //for debugging purposes
+                                            if (desiredCourses.Count == 4 && debug) //for debugging purposes
                                             {
                                                 counter++;
                                                 concatStr = tempCourse.getCRN() + "," + tempCourse2.getCRN() +
@@ -389,7 +371,7 @@
                                                         continue;
                                                     }
 
-                                                    if (desiredCourses.Count == 5) //for debugging purposes
+                                                    if (desiredCourses.Count == 5 && debug) //for debugging purposes
                                                     {
                                                         counter++;
                                                         concatStr = tempCourse.getCRN() + "," + tempCourse2.getCRN() +
@@ -470,7 +452,7 @@
                                                                 continue;
                                                             }
 
-                                                            if (desiredCourses.Count == 6) //for debugging purposes
+                                                            if (desiredCourses.Count == 6 && debug) //for debugging purposes
                                                             {
                                                                 counter++;
                                                                 concatStr = tempCourse.getCRN() + "," + tempCourse2.getCRN() +
