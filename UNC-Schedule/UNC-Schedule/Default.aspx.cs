@@ -8,6 +8,7 @@
     using System.IO;
     using System.Linq;
     using System.Web.UI;
+    using System.Windows.Forms;
 
     /// <summary>
     /// Defines the <see cref="_Default" />
@@ -29,7 +30,7 @@
         /// sw writes to a textfile on the current machines desktop
         /// Directory WILL need to change
         /// </summary>
-        public static StreamWriter sw = new StreamWriter(@"C:\Users\ctr20\Desktop\schedules.txt");
+        //public static StreamWriter sw = new StreamWriter(@"C:\Users\ctr20\Desktop\schedules.txt");
 
         /// <summary>
         /// The Page_Load
@@ -47,7 +48,7 @@
 
 
                 string queryStr = "Select * FROM course_table;";
-                string ConnectionStr = "server=localhost; uid=root; pwd=12345; database=Courses";
+                string ConnectionStr = "server=localhost; uid=root; pwd=Deepw00d; database=Courses";
                 using (MySqlConnection connection = new MySqlConnection(ConnectionStr))
                 {
                     MySqlCommand command = new MySqlCommand(queryStr, connection);
@@ -120,9 +121,9 @@
             //"CSC133", "CSC331", "CSC231", "ENG101" 
             //"CSC231", "CSC133", "CSC331", "CSC231", "ENG101" 
             //"CSC385", "CSC231", "CSC133", "CSC331", "CSC231", "ENG101" 
-            ArrayList desiredCourses = new ArrayList() { "CSC231", "CSC133", "CSC331", "CSC231", "ENG101" };
+            ArrayList desiredCourses = new ArrayList() { "MAT111", "ENG101", "BIO101", "PED111", "ART111" };
             String a = testFunction(desiredCourses);
-            sw.Close();
+            //sw.Close();
         }
 
         /// <summary>
@@ -132,12 +133,6 @@
         /// <returns>The <see cref="string"/></returns>
         private string testFunction(ArrayList desiredCourses)
         {
-            //Every course has a corresponding courseSTR, courseBitArray, courseList, and courseBits
-            //
-            //courseStr = subj + courseNum
-            //courseList = List of all sections for a course
-            //courseBits = string of bits
-            //courseBitArray = converts courseBits to an Array
 
             ArrayList sectionsDesiredCourses = new ArrayList();
 
@@ -206,7 +201,7 @@
                             {
                                 counter++;
                                 concatStr = tempCourse.getCRN() + "," + tempCourse2.getCRN() + ",";
-                                sw.WriteLine(counter + ": " + concatStr);
+                                //sw.WriteLine(counter + ": " + concatStr);
                             }
 
                             if (desiredCourses.Count >= 3)
@@ -252,7 +247,7 @@
                                         counter++;
                                         concatStr = tempCourse.getCRN() + "," + tempCourse2.getCRN() +
                                             "," + tempCourse3.getCRN() + "," + ";";
-                                        sw.WriteLine(counter + ": " + concatStr);
+                                        //sw.WriteLine(counter + ": " + concatStr);
                                     }
 
                                     if (desiredCourses.Count >= 4)
@@ -311,7 +306,7 @@
                                                 counter++;
                                                 concatStr = tempCourse.getCRN() + "," + tempCourse2.getCRN() +
                                                     "," + tempCourse3.getCRN() + "," + tempCourse4.getCRN() + ";";
-                                                sw.WriteLine(counter + ": " + concatStr);
+                                                //sw.WriteLine(counter + ": " + concatStr);
                                             }
                                             if (desiredCourses.Count >= 5)
                                             {
@@ -377,7 +372,7 @@
                                                         concatStr = tempCourse.getCRN() + "," + tempCourse2.getCRN() +
                                                             "," + tempCourse3.getCRN() + "," + tempCourse4.getCRN() +
                                                             "," + tempCourse5.getCRN() + ";";
-                                                        sw.WriteLine(counter + ": " + concatStr);
+                                                        //sw.WriteLine(counter + ": " + concatStr);
                                                     }
 
 
@@ -458,7 +453,7 @@
                                                                 concatStr = tempCourse.getCRN() + "," + tempCourse2.getCRN() +
                                                                     "," + tempCourse3.getCRN() + "," + tempCourse4.getCRN() +
                                                                     "," + tempCourse5.getCRN() + "," + tempCourse6.getCRN() + ";";
-                                                                sw.WriteLine(counter + ": " + concatStr);
+                                                                //sw.WriteLine(counter + ": " + concatStr);
                                                             }
                                                         }
                                                     }
