@@ -14,7 +14,13 @@
     /// Defines the <see cref="_Default" />
     /// </summary>
     public partial class _Default : Page
+
+
     {
+
+
+ 
+
         /// <summary>
         /// Defines the mappy
         /// </summary>
@@ -26,11 +32,23 @@
         /// </summary>
         public static Boolean debug = true;
 
+
+        public static string strGlobal = "before";
+
         /// <summary>
         /// sw writes to a textfile on the current machines desktop
         /// Directory WILL need to change
         /// </summary>
         //public static StreamWriter sw = new StreamWriter(@"C:\Users\ctr20\Desktop\schedules.txt");
+
+
+        [System.Web.Services.WebMethod]
+        public static string backEndFunction()
+        {
+            return strGlobal;
+        }
+
+
 
         /// <summary>
         /// The Page_Load
@@ -48,7 +66,7 @@
 
 
                 string queryStr = "Select * FROM course_table;";
-                string ConnectionStr = "server=localhost; uid=root; pwd=Deepw00d; database=Courses";
+                string ConnectionStr = "server=localhost; uid=root; pwd=12345; database=Courses";
                 using (MySqlConnection connection = new MySqlConnection(ConnectionStr))
                 {
                     MySqlCommand command = new MySqlCommand(queryStr, connection);
@@ -117,11 +135,14 @@
         public void Button1_Click(object sender, EventArgs e)
         {
 
+
+
+
             //"MAT161", "ENG101", "CSC331"
             //"CSC133", "CSC331", "CSC231", "ENG101" 
             //"CSC231", "CSC133", "CSC331", "CSC231", "ENG101" 
             //"CSC385", "CSC231", "CSC133", "CSC331", "CSC231", "ENG101" 
-            ArrayList desiredCourses = new ArrayList() { "MAT111", "ENG101", "BIO101", "PED111", "ART111" };
+            ArrayList desiredCourses = new ArrayList() { "ACG201", "ENG101"};
             String a = testFunction(desiredCourses);
             //sw.Close();
         }
@@ -143,6 +164,7 @@
                 sectionsDesiredCourses.Add(courseList);
             }
 
+            strGlobal = "Number of courses: " + sectionsDesiredCourses.Count;
 
             BitArray course1BitArray = null;
             BitArray course2BitArray = null;
